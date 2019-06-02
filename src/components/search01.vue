@@ -12,6 +12,7 @@
         </button>
         <select v-model="selected">
           <option v-for="search in search_data"
+                  :key="search"
                   :value="search.index">{{search.name}}</option>
         </select>
       </div>

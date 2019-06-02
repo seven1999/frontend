@@ -42,6 +42,11 @@ const routerOptions = [
     path: '/order',
     name: 'order',
     component: 'mock_create_order'
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: 'testdemo'
   }
 ]
 
