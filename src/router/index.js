@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import Vue from 'vue'
 import Router from 'vue-router'
 // import search from '@/components/Search'
@@ -30,7 +31,7 @@ const routerOptions = [
   },
   {
     path: '/search01',
-    name: 'search',
+    name: 'search01',
     component: 'search01'
   },
   {
@@ -47,6 +48,11 @@ const routerOptions = [
     path: '/test',
     name: 'test',
     component: 'testdemo'
+  },
+  {
+    path: '/practice',
+    name: 'practice',
+    component: 'practicedemo'
   }
 ]
 

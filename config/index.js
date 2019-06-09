@@ -9,7 +9,19 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // 设置代理 解决Vue跨域问题
+      '/api': {
+        target: 'http://127.0.0.1:5000', // 设置调用接口域名和端口号别忘了加http
+        // target: 'gudangku.test.shopee.co.id', // 设置调用接口域名和端口号别忘了加http
+        changeOrigin: true, // 是否跨域
+        pathRewrite: {
+          '^/api': '' // 这里理解成用‘/api’代替target里面的地址，组件中我们调接口时直接用/api代替
+          // 比如我要调用'http://0.0:300/user/add'，直接写‘/api/user/add’即可 代理后地址栏显示/
+        }
+      }
+    },
+    // proxyTable: {},
     // proxyTable: {
     //   '/api': {
     //     target: 'http://127.0.0.1:5000',
@@ -30,7 +42,7 @@ module.exports = {
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.
-    useEslint: true,
+    useEslint: false,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
