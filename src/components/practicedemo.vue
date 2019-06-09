@@ -4,7 +4,7 @@
     <h2>{{this.$store.state.count}}</h2>
     <h2>{{this.$store.getters.getStateCount}}</h2>
     <button class="button1"
-            @click="getEnum">get_Enum</button>
+            @click="getRandom">get_Enum</button>
     <input type="textarea"
            v-model="enumresult"
            placeholder=0 />
@@ -40,7 +40,7 @@ export default {
     addFun () {
       this.$store.dispatch('addFun')
     },
-    getEnum () {
+    getRandom () {
       this.$request
         // .get('/api/enum_map')
         .get('/vue_demo/api/random')

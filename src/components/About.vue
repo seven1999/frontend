@@ -293,22 +293,25 @@ export default {
       })
     },
     getOrder () {
-      const path = '/api/enum_map'
-      // this.$axios.get(this.BASE_API + path)
-      this.$axios
-        .get(this.BaseUrl + path)
+      const path = '/order_flow/api/getenum'
+      var dat = { 'env': this.env, 'country': this.country }
+      this.AppOrder = ''
+      this.$request
+        .post(path, dat)
         .then(response => {
-          this.AppOrder = JSON.stringify(response.data)
+          this.AppOrder = JSON.stringify(response.data.res_data)
         })
         .catch(error => {
           console.log(error)
         })
     },
     getJson () {
-      const path = '/api/enum_map'
-      // this.$axios.get(this.BASE_API + path)
-      this.$axios
-        .get(this.BaseUrl + path)
+      const path = '/order_flow/api/getenum'
+      var dat = { 'env': this.env, 'country': this.country, 'seller': this.seller, 'selleraddr': this.selleraddr, 'product': this.product, 'buyer_addr': this.country, 'channel': this.channel, 'pay_method': this.pay_method }
+      // var dat = { 'env': this.env, 'country': this.country }
+      console.log(dat)
+      this.$request
+        .post(path, dat)
         .then(response => {
           this.AppJson = JSON.stringify(response.data)
         })
